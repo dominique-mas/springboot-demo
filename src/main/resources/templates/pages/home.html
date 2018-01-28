@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- xmlns signifie xml name space.
+	Toutes les instructions Thymeleaf seront précédées de th. -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Avec Thymeleaf, on doit rajouter / pour fermer la balise. -->
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Le texte entre balises permet d'indiquer à quçoi peut ressembler le résultat.
+		Cela est utile pour les designers qui ouvrent la page de manière statique via un navigateur. -->
+	<h1 th:text="'Hello ' + ${#strings.capitalize(name)} + '!'">Hello Honoré</h1>
+</body>
+</html>

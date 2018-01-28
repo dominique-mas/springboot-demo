@@ -1,8 +1,9 @@
 package com.teachersdunet.demo.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PagesController {
@@ -14,8 +15,9 @@ public class PagesController {
 	 * @return
 	 */
 	@GetMapping("/")
-	@ResponseBody
-	public String home() {
-		return "Hello world";
+	// @ResponseBody
+	public String home(@RequestParam(required=false, defaultValue = "world") String name, ModelMap modelMap) {
+		modelMap.put("name", name);
+		return "pages/home";
 	}
 }
